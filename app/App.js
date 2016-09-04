@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import KanbanBoard from './KanbanBoard';
+import KanbanBoardContainer from './KanbanBoardContainer';
 
 let cardList = [
   {
@@ -38,8 +38,8 @@ let cardList = [
   }
 ];
 
-// render(<KanbanBoard cards={cardList} />, document.getElementById('root'));
+render(<KanbanBoardContainer />, document.getElementById('root'));
 
 
-import ContactsApp from './ContactsApp';
-render(<ContactsApp.ContactsAppContainer />, document.getElementById('root'));
+// import ContactsApp from './ContactsApp';
+// render(<ContactsApp.ContactsApp />, document.getElementById('root'));
