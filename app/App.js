@@ -42,4 +42,4 @@ let cardList = [
 
 
 import ContactsApp from './ContactsApp';
-render(<ContactsApp.ContactsApp contacts={ContactsApp.contacts} />, document.getElementById('root'));
+render(<ContactsApp.ContactsAppContainer />, document.getElementById('root'));

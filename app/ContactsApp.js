@@ -1,6 +1,37 @@
 import React, {Component, PropTypes} from 'react';
 import {render} from 'react-dom';
 
+class ContactsAppContainer extends Component {
+  constructor() {
+    super(...arguments);
+    this.state = {
+      contacts: []
+    }
+  }
+
+  fetchContacts(url) {
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({contacts: responseData});
+      })
+      .catch((error) => {
+        console.log('Error fetching and parsing data', error);
+      });
+  }
+
+  componentDidMount() {
+    this.fetchContacts('./contacts.json');
+  }
+
+  render() {
+    return (
+      <ContactsApp contacts={this.state.contacts} />
+    );
+  }
+
+}
+
 class ContactsApp extends Component {
   constructor() {
     super(...arguments);
@@ -88,9 +119,4 @@ ContactItem.propTypes = {
   email: PropTypes.string.isRequired
 };
 
-let contacts = [
-  {name: "Cassio Zen", email: "cassiozen@gmail.com"},
-  {name: "Bak Yeon O", email: "bakyeono@gmail.com"}
-];
-
-export default {ContactsApp, contacts};
+export default {ContactsAppContainer};
