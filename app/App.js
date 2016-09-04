@@ -38,4 +38,8 @@ let cardList = [
   }
 ];
 
-render(<KanbanBoard cards={cardList} />, document.getElementById('root'));
+// render(<KanbanBoard cards={cardList} />, document.getElementById('root'));
+
+
+import ContactsApp from './ContactsApp';
+render(<ContactsApp.ContactsApp contacts={ContactsApp.contacts} />, document.getElementById('root'));
